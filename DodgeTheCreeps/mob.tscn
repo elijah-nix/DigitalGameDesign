@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://c54i4q7dhypgv"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_4e4fc"]
+[ext_resource type="Texture2D" uid="uid://ci2x01pg8p5xo" path="res://art/enemyFlyingAlt_1.png" id="2_dkwcs"]
+[ext_resource type="Texture2D" uid="uid://dssxnk78s2pxb" path="res://art/enemyFlyingAlt_2.png" id="3_da37q"]
+[ext_resource type="Texture2D" uid="uid://cf3f3xme3ijcy" path="res://art/enemySwimming_1.png" id="4_kdevc"]
+[ext_resource type="Texture2D" uid="uid://cfpllyb6pui3a" path="res://art/enemySwimming_2.png" id="5_rg0oo"]
+[ext_resource type="Texture2D" uid="uid://cixi0i2a2y0ms" path="res://art/enemyWalking_1.png" id="6_4eawv"]
+[ext_resource type="Texture2D" uid="uid://gp4ik31dpq7i" path="res://art/enemyWalking_2.png" id="7_qvvfr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1usd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dkwcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_da37q")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kdevc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rg0oo")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4eawv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qvvfr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u113j"]
+radius = 88.0
+height = 256.0
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+scale = Vector2(0.5, 0.5)
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_4e4fc")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_h1usd")
+animation = &"walk"
+frame_progress = 0.0866577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_u113j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.86102e-06, -1)
+scale = Vector2(3.4, 2.5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
