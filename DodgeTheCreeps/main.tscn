@@ -52,7 +52,7 @@ curve = SubResource("Curve2D_ialou")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nsaxj")
-parameters/looping = false
+parameters/looping = true
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_rmxmh")
