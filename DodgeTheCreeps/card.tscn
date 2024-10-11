@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0kc3amr01emx"]
+
+[ext_resource type="Texture2D" uid="uid://bnac6y4jmkbnu" path="res://art/3bg83erqx7jc1.jpeg" id="1_ns0a7"]
+[ext_resource type="Texture2D" uid="uid://boxxk3sbd05ik" path="res://art/images.jpg" id="1_tgpkv"]
+[ext_resource type="Script" path="res://card.gd" id="2_bnihg"]
+[ext_resource type="FontFile" uid="uid://bc0wbse2e7dfs" path="res://fonts/Bagnard.otf" id="3_y8epm"]
+
+[node name="Card" type="Sprite2D"]
+position = Vector2(208, 280)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ns0a7")
+script = ExtResource("2_bnihg")
+metadata/_edit_group_ = true
+
+[node name="CardPicture" type="Sprite2D" parent="."]
+position = Vector2(-2, -204)
+scale = Vector2(4.31579, 1.78113)
+texture = ExtResource("1_tgpkv")
+
+[node name="CardType" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CardType"]
+offset_left = -412.0
+offset_top = -562.0
+offset_right = 408.0
+offset_bottom = -440.0
+color = Color(1, 0, 0, 1)
+
+[node name="CardType" type="Label" parent="CardType"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -412.0
+offset_top = -562.0
+offset_right = 408.0
+offset_bottom = -449.0
+theme_override_fonts/font = ExtResource("3_y8epm")
+theme_override_font_sizes/font_size = 82
+text = "CARD TYPE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardName" type="Node2D" parent="."]
+position = Vector2(0, 576)
+
+[node name="ColorRect" type="ColorRect" parent="CardName"]
+offset_left = -412.0
+offset_top = -562.0
+offset_right = 408.0
+offset_bottom = -440.0
+color = Color(1, 0, 0, 1)
+
+[node name="CardName" type="Label" parent="CardName"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -412.0
+offset_top = -562.0
+offset_right = 408.0
+offset_bottom = -449.0
+theme_override_fonts/font = ExtResource("3_y8epm")
+theme_override_font_sizes/font_size = 82
+text = "CARD NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardText" type="Node2D" parent="."]
+position = Vector2(0, 1000)
+
+[node name="ColorRect" type="ColorRect" parent="CardText"]
+offset_left = -412.0
+offset_top = -873.0
+offset_right = 408.0
+offset_bottom = -440.0
+color = Color(0, 0, 0, 1)
+
+[node name="CardName" type="Label" parent="CardText"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -352.0
+offset_top = -864.0
+offset_right = 360.0
+offset_bottom = -488.0
+theme_override_fonts/font = ExtResource("3_y8epm")
+theme_override_font_sizes/font_size = 82
+text = "Here's a brief description. Here's what this card does"
+autowrap_mode = 3

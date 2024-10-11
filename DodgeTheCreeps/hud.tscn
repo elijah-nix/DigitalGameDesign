@@ -12,20 +12,6 @@ events = [SubResource("InputEventAction_l0m4e")]
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_fr2hs")
 
-[node name="ScoreLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -68.0
-offset_right = 68.0
-offset_bottom = 78.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_cutrn")
-theme_override_font_sizes/font_size = 64
-text = "0"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Message" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,8 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_cutrn")
 theme_override_font_sizes/font_size = 64
-text = "Dodge the
-creeps!"
+text = "Wake Up"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
