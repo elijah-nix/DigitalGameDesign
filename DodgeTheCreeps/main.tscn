@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="HUD" parent="." instance=ExtResource("4_cwipi")]
+[node name="StartHUD" parent="." instance=ExtResource("4_cwipi")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nsaxj")
@@ -29,4 +29,4 @@ parameters/looping = true
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_rmxmh")
 
-[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="start_game" from="StartHUD" to="." method="new_game"]

@@ -6,11 +6,18 @@
 [ext_resource type="FontFile" uid="uid://bc0wbse2e7dfs" path="res://fonts/Bagnard.otf" id="3_y8epm"]
 
 [node name="Card" type="Sprite2D"]
-position = Vector2(208, 280)
+position = Vector2(200, 280)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ns0a7")
 script = ExtResource("2_bnihg")
 metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -448.0
+offset_top = -612.0
+offset_right = -406.0
+offset_bottom = -597.0
+scale = Vector2(21.4192, 81.8791)
 
 [node name="CardPicture" type="Sprite2D" parent="."]
 position = Vector2(-2, -204)
@@ -64,17 +71,17 @@ text = "CARD NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardText" type="Node2D" parent="."]
+[node name="CardDescr" type="Node2D" parent="."]
 position = Vector2(0, 1000)
 
-[node name="ColorRect" type="ColorRect" parent="CardText"]
+[node name="ColorRect" type="ColorRect" parent="CardDescr"]
 offset_left = -412.0
 offset_top = -873.0
 offset_right = 408.0
 offset_bottom = -440.0
 color = Color(0, 0, 0, 1)
 
-[node name="CardName" type="Label" parent="CardText"]
+[node name="CardDescr" type="Label" parent="CardDescr"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.109
